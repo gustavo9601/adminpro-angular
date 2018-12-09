@@ -6,11 +6,14 @@ import {PagesComponent} from "src/app/pages/pages.component";
 import {AccountSettingsComponent} from "src/app/pages/account-settings/account-settings.component";
 import {PromesasComponent} from "src/app/pages/promesas/promesas.component";
 import {RxjsComponent} from "src/app/pages/rxjs/rxjs.component";
+import {LoginGuardGuard} from "src/app/services/guards/login-guard.guard";
+
 
 const appRoutes: Routes = [
   {
     path: '',
     component: PagesComponent,
+    canActivate: [LoginGuardGuard], //Implementamos el guard que devuelve un booleanno si puede o no cargar la ruta
     children: [
       //data : {} | ''   => envia informacion de la ruta, que puede ser recibida desde el componente
       {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dahsboard'}},
