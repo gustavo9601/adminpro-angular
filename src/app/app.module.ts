@@ -21,7 +21,7 @@ import {ServiceModule} from "src/app/services/service.module";
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent,
+    RegisterComponent
   ],
   imports: [/*Modulos*/
     BrowserModule,

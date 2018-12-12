@@ -7,6 +7,7 @@ import {AccountSettingsComponent} from "src/app/pages/account-settings/account-s
 import {PromesasComponent} from "src/app/pages/promesas/promesas.component";
 import {RxjsComponent} from "src/app/pages/rxjs/rxjs.component";
 import {LoginGuardGuard} from "src/app/services/guards/login-guard.guard";
+import {PerfilComponent} from "src/app/pages/perfil/perfil.component";
 
 
 const appRoutes: Routes = [
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     children: [
       //data : {} | ''   => envia informacion de la ruta, que puede ser recibida desde el componente
       {path: 'dashboard', component: DashboardComponent, data: {titulo: 'Dahsboard'}},
+      {path: 'perfil', component: PerfilComponent, data: {titulo: 'Perfil'}},
       {path: 'progress', component: ProgressComponent, data: {titulo: 'Progress @Input @Output @Viewchild'}},
       {path: 'graficas1', component: Graficas1Component, data: {titulo: 'Graficas @Input'}},
       {path: 'promesas', component: PromesasComponent, data: {titulo: 'Promesas'}},
