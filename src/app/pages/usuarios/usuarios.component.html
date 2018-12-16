@@ -1,0 +1,90 @@
+<div class="row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <input
+          #input (keyup)="buscarUsuario(input.value)"
+          type="text" placeholder="Buscar usuario..." class="form-control">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row row animated fadeIn" *ngIf="!usuarios">
+  <div class="col-sm-12">
+    <div class="alert alert-warning text-center">
+      <strong>Cargando</strong>
+      <br>
+      <i class="fa fa-refresh fa-spin fa-2x"></i>
+      <span>Espere por favor ...</span>
+    </div>
+  </div>
+</div>
+
+<div class="row row animated fadeIn">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Usuarios registrados (
+          <small>{{totalRegistros}}</small>
+          )
+        </h3>
+
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Correo</th>
+            <th>Nombre</th>
+            <th>Role</th>
+            <th>Auth</th>
+          </tr>
+          </thead>
+          <tbody *ngIf="usuarios">
+          <tr *ngFor="let usuario of usuarios">
+            <td>
+              <img
+                (click)="mostrarModal( usuario._id )"
+                [src]="usuario.img | imagen" alt=""
+                class="img-50 img-circle pointer">
+            </td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.role}}
+
+              <select name="role" class="form-control"
+              [(ngModel)]="usuario.role"
+              >
+
+                <option value="ADMIN_ROLE">ADMIN_ROLE</option>
+                <option value="USER_ROLE">USER_ROLE</option>
+              </select>
+            </td>
+            <td>
+              <label class="label label-danger" *ngIf="usuario.google">Google</label>
+              <label class="label label-info" *ngIf="!usuario.google">Normal</label>
+            </td>
+            <td>
+              <button class="btn btn-primary"
+              (click)="guardarUsuario(usuario)"
+              ><i class="fa fa-save"></i></button>
+              <button class="btn btn-danger"
+              (click)="borrarUsuario(usuario)"
+              ><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+
+
+        <button class="btn btn-scondary" (click)="cambiarDese(-5)">
+          Anteriores
+        </button>
+        <button class="btn btn-scondary" (click)="cambiarDese(5)">
+          Siguientes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

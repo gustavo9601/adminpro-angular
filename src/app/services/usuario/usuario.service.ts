@@ -138,30 +138,81 @@ export class UsuarioService {
     let url = URL_SERVICIOS + '/usuario/' + usuario._id;
     url += '?token=' + this.token;
 
+
+    console.log("Usuario a enviar a la peticion", usuario);
+
     return this.http.put(url, usuario).pipe(
       map(
         (respuesta: any) => {
 
-          //Actualizando el local storage
-          this.guardarStorage(respuesta.usuario._id, this.token, respuesta.usuario);
 
-
+          //Verificacion si la actualizacion es para el propio usuario
+          if(usuario._id === this.usuario._id){
+            //Actualizando el local storage
+            this.guardarStorage(respuesta.usuario._id, this.token, respuesta.usuario);
+          }
           return respuesta;
+
+
         }
       )
     );
   }
 
 
-  cambiarImagen(arhivo: File, id: string) {
+  cambiarImagen(usuario: any, id: string) {
 
 
-    this._subirArchivoService.subirArchivo(arhivo, 'usuario', id)
+
+    /*this._subirArchivoService.subirArchiv2(arhivo, 'usuario', id)
       .then((respuesta) => {
         console.log("Respuesta", respuesta);
       }).catch((error) => {
       console.log("Error", error);
-    });
+    });*/
+
+    this._subirArchivoService.subirArchivo2(usuario, 'usuario', id)
+  }
+
+
+  cargarUsuarios(desde: number) {
+    let url = URL_SERVICIOS + '/usuario?desde=' + desde;
+
+    return this.http.get(url)
+      .pipe(map(
+        (respuesta) => {
+          return respuesta;
+        }
+      ));
+  }
+
+  buscarUsuarios(termino: string) {
+
+    let url = URL_SERVICIOS + '/busqueda/coleccion/usuarios/' + termino;
+
+    return this.http.get(url).pipe(
+      map(
+        (respuesta: any) => {
+          return respuesta.usuarios;
+        }
+      )
+    )
+
+  }
+
+
+  borrarUsuario(id) {
+
+    let url = URL_SERVICIOS + '/usuario/' + id + '?token=' + this.token;
+
+    return this.http.delete(url).pipe(
+      map(
+        (respuesta) => {
+          return respuesta;
+        }
+      )
+    )
+
   }
 
 

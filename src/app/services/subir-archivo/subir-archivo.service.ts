@@ -1,12 +1,17 @@
 import {Injectable} from '@angular/core';
 import {URL_SERVICIOS} from "src/app/config/config";
+import {Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
+import {map} from "rxjs/internal/operators";
+import {Usuario} from "src/app/models/usuario.model";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SubirArchivoService {
 
-  constructor() {
+  constructor(public http: HttpClient,
+              public router: Router) {
   }
 
 
@@ -45,6 +50,26 @@ export class SubirArchivoService {
   }
 
 
+  subirArchivo2(usuario: Usuario, tipo: string, id: string) {
+
+
+    console.log("usario a enviar a la peticion", usuario);
+
+
+
+    let url = URL_SERVICIOS + '/upload2/' + tipo + '/' + id;
+
+   return  this.http.put(url, usuario).pipe(
+      map((respuesta) => {
+
+        console.log("Repsuesta al subir archivo", respuesta)
+
+        return respuesta;
+      })
+    )
+
+
+  }
 
 
 }

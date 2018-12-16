@@ -20,6 +20,8 @@ import {AccountSettingsComponent} from './account-settings/account-settings.comp
 import {PromesasComponent} from './promesas/promesas.component';
 import {RxjsComponent} from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import {ModalUploadComponent} from "src/app/components/modal-upload/modal-upload.component";
 
 @NgModule({
   imports: [
@@ -35,7 +37,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     ProgressComponent,
     GraficoDonaComponent,
     Graficas1Component,
-    IncrementadorComponent
+    IncrementadorComponent,
+    UsuariosComponent
   ],
   declarations: [/*Componentes localmente*/
     PagesComponent,
@@ -47,7 +50,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
-    PerfilComponent
+    PerfilComponent,
+    UsuariosComponent,
+    ModalUploadComponent
   ],
   providers: [],
 })

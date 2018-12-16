@@ -73,7 +73,7 @@ export class PerfilComponent implements OnInit {
     let reader = new FileReader();
     let urlImagenTemp = reader.readAsDataURL(archivo);
     reader.onloadend = () => this.imagenTemp = reader.result;
-    
+
 
     this.imagenSubir = archivo;
 
@@ -81,7 +81,12 @@ export class PerfilComponent implements OnInit {
 
 
   cambiarImagen() {
-    this._usuarioService.cambiarImagen(this.imagenSubir, this.usuario._id);
+
+    console.log(this.imagenTemp);
+
+    this.usuario.img = this.imagenTemp;
+
+    this._usuarioService.cambiarImagen(this.usuario, this.usuario._id);
   }
 
 }
