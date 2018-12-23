@@ -9,6 +9,9 @@ import {RxjsComponent} from "src/app/pages/rxjs/rxjs.component";
 import {LoginGuardGuard} from "src/app/services/guards/login-guard.guard";
 import {PerfilComponent} from "src/app/pages/perfil/perfil.component";
 import {UsuariosComponent} from "src/app/pages/usuarios/usuarios.component";
+import {HospitalesComponent} from "src/app/pages/hospitales/hospitales.component";
+import {MedicosComponent} from "src/app/pages/medicos/medicos.component";
+import {MedicoComponent} from "src/app/pages/medicos/medico.component";
 
 
 const appRoutes: Routes = [
@@ -26,7 +29,10 @@ const appRoutes: Routes = [
       {path: 'rxjs', component: RxjsComponent, data: {titulo: 'RxJs Observables'}},
       {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
       {path: 'perfil', component: PerfilComponent, data: {titulo: 'Perfil'}},
-      {path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantenimientos usuarios'}}
+      {path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Mantenimientos usuarios'}},
+      {path: 'hospitales', component: HospitalesComponent, data: {titulo: 'Mantenimientos hospitales'}},
+      {path: 'medicos', component: MedicosComponent, data: {titulo: 'Mantenimientos Medicos'}},
+      {path: 'medico/:id', component: MedicoComponent, data: {titulo: 'Actualizar Medico'}}
     ]
   }
 ];

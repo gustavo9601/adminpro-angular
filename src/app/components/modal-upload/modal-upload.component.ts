@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Usuario} from "src/app/models/usuario.model";
-
 //Swal
 import Swal from 'sweetalert2'
 import {SubirArchivoService} from "src/app/services/subir-archivo/subir-archivo.service";
@@ -33,15 +32,13 @@ export class ModalUploadComponent implements OnInit {
   }
 
 
-
   subirImagen() {
     console.log("Subiendo imagen");
 
     //De esta forma comunicamos dos archivos de servicios
-    this._subirArchivoService.subirArchivo(this.imagenSubir, this._modalUploadService.tipo,this._modalUploadService.id )
+    this._subirArchivoService.subirArchivo(this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id)
       .then(
         (respuesta) => {
-
 
           console.log(respuesta);
           //Si se subio correctamente la imagen

@@ -19,9 +19,12 @@ import {GraficoDonaComponent} from "src/app/components/grafico-dona/grafico-dona
 import {AccountSettingsComponent} from './account-settings/account-settings.component';
 import {PromesasComponent} from './promesas/promesas.component';
 import {RxjsComponent} from './rxjs/rxjs.component';
-import { PerfilComponent } from './perfil/perfil.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
+import {PerfilComponent} from './perfil/perfil.component';
+import {UsuariosComponent} from './usuarios/usuarios.component';
 import {ModalUploadComponent} from "src/app/components/modal-upload/modal-upload.component";
+import {HospitalesComponent} from './hospitales/hospitales.component';
+import {MedicosComponent} from "src/app/pages/medicos/medicos.component";
+import {MedicoComponent} from "src/app/pages/medicos/medico.component";
 
 @NgModule({
   imports: [
@@ -52,7 +55,10 @@ import {ModalUploadComponent} from "src/app/components/modal-upload/modal-upload
     RxjsComponent,
     PerfilComponent,
     UsuariosComponent,
-    ModalUploadComponent
+    ModalUploadComponent,
+    HospitalesComponent,
+    MedicoComponent,
+    MedicosComponent
   ],
   providers: [],
 })
