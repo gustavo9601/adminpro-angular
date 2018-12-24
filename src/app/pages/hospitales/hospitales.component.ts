@@ -40,7 +40,6 @@ export class HospitalesComponent implements OnInit {
       title: 'Crear Hospital',
       text: 'Ingrese el nombre del hospital',
       input: 'text',
-      icon: 'info',
       buttons: true,
       dangerMode: true
     }).then(valor => {

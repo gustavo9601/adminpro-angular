@@ -127,7 +127,10 @@ export class RegisterComponent implements OnInit {
 
       },
       (error) => {
-        console.log("error", error);
+        console.log("error al crear el usuario", error);
+
+        Swal('Error', error.error.errors.message, 'error');
+
       }
     )
   }

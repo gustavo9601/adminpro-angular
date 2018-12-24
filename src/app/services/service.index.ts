@@ -2,6 +2,8 @@
 * Exportamos todos los servicios, para unificar todas las importaciones
 * */
 
+
+export {AdminGuard} from "src/app/services/guards/admin.guard";
 export {MedicoService} from "src/app/services/medicos/medico.service";
 export {HospitalService} from "src/app/services/hospital/hospital.service";
 export {SubirArchivoService} from "src/app/services/subir-archivo/subir-archivo.service";

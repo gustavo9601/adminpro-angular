@@ -8,6 +8,9 @@ import {Usuario} from "src/app/models/usuario.model";
 declare function init_plugins(); //funcion que esta en el customm.js la declaramos
 declare const gapi: any;
 
+//Swal
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -96,6 +99,12 @@ export class LoginComponent implements OnInit {
         },
         (error) => {
           console.log("error login", error);
+          console.log("error login error", error.error);
+
+          if(error.error){
+            Swal('Error', error.error.mensaje, 'error');
+          }
+
         }
       );
   }

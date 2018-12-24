@@ -25,6 +25,7 @@ import {ModalUploadComponent} from "src/app/components/modal-upload/modal-upload
 import {HospitalesComponent} from './hospitales/hospitales.component';
 import {MedicosComponent} from "src/app/pages/medicos/medicos.component";
 import {MedicoComponent} from "src/app/pages/medicos/medico.component";
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
   imports: [
@@ -58,7 +59,8 @@ import {MedicoComponent} from "src/app/pages/medicos/medico.component";
     ModalUploadComponent,
     HospitalesComponent,
     MedicoComponent,
-    MedicosComponent
+    MedicosComponent,
+    BusquedaComponent
   ],
   providers: [],
 })

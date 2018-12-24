@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 
 import {URL_SERVICIOS} from "src/app/config/config";
 import {map} from "rxjs/internal/operators";
+import {catchError} from "rxjs/internal/operators";
 import {Router} from "@angular/router";
 import {SubirArchivoService} from "src/app/services/subir-archivo/subir-archivo.service";
 
@@ -80,13 +81,14 @@ export class UsuarioService {
     return this.http.post(url, usuario)
       .pipe(map((respuesta: any) => {
 
+          console.log("Respues del login ingresar", respuesta);
 
-          this.guardarStorage(respuesta.id, respuesta.token, respuesta.usuario);
+          this.guardarStorage(respuesta.id, respuesta.token, respuesta.usuario, respuesta.menu);
 
           return true;
 
-        }
-      ))
+        })
+      )
   }
 
   logout() {
@@ -101,17 +103,16 @@ export class UsuarioService {
     this.router.navigate(['/login']);
   }
 
-  guardarStorage(id: string, token: string, usuario: Usuario/*, menu: any */) {
+  guardarStorage(id: string, token: string, usuario: Usuario, menu: any) {
 
     localStorage.setItem('id', id);
     localStorage.setItem('token', token);
     localStorage.setItem('usuario', JSON.stringify(usuario));
-    /*    localStorage.setItem('menu', JSON.stringify(menu) );*/
+    localStorage.setItem('menu', JSON.stringify(menu));
 
     this.usuario = usuario;
     this.token = token;
-    /*  this.menu = menu;
-    */
+    this.menu = menu;
   }
 
   estaLogueado() {
@@ -124,11 +125,11 @@ export class UsuarioService {
     if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
       this.usuario = JSON.parse(localStorage.getItem('usuario'));
-      //  this.menu = JSON.parse( localStorage.getItem('menu') );
+      this.menu = JSON.parse(localStorage.getItem('menu'));
     } else {
       this.token = '';
       this.usuario = null;
-      // this.menu = [];
+      this.menu = [];
     }
 
   }
@@ -147,9 +148,9 @@ export class UsuarioService {
 
 
           //Verificacion si la actualizacion es para el propio usuario
-          if(usuario._id === this.usuario._id){
+          if (usuario._id === this.usuario._id) {
             //Actualizando el local storage
-            this.guardarStorage(respuesta.usuario._id, this.token, respuesta.usuario);
+            this.guardarStorage(respuesta.usuario._id, this.token, respuesta.usuario, this.menu);
           }
           return respuesta;
 

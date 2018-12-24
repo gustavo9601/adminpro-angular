@@ -1,11 +1,15 @@
 import {Injectable} from '@angular/core';
+import {UsuarioService} from "src/app/services/usuario/usuario.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SidebarService {
 
-  menu: any = [
+
+  public menu: any[] = [];
+
+  /*menu: any = [
     {
       titulo: 'Principal',
       icono: 'mdi mdi-gauge',
@@ -26,7 +30,16 @@ export class SidebarService {
         {titulo: 'Medicos', url: '/medicos'},
       ]
     }
-  ];
-  constructor() {
+  ];*/
+  constructor(public _usuarioService: UsuarioService) {
+
   }
+
+
+  cargarMenu() {
+    //Conectamos al servicio de usuario, que ya cuenta con la variable de menu seteada
+    // y la cargamos al servicio
+    this.menu = this._usuarioService.menu;
+  }
+
 }
