@@ -40,9 +40,11 @@ export class HospitalesComponent implements OnInit {
       title: 'Crear Hospital',
       text: 'Ingrese el nombre del hospital',
       input: 'text',
-      buttons: true,
-      dangerMode: true
-    }).then(valor => {
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si crearlo'
+    }).then((valor: any) => {
 
       if (!valor || valor.length === 0) {
         return;
@@ -51,6 +53,8 @@ export class HospitalesComponent implements OnInit {
       this._hospitalService.crearHospital(valor.value)
         .subscribe(
           (respuesta) => {
+            console.log("Respuesta crear hospital", respuesta);
+
             Swal('Creacion exitosa', 'Se creo correctamente', 'success');
             this.cargarHospitales();
           }

@@ -12,24 +12,27 @@ import {PagesModule} from "src/app/pages/pages.module";
 import {AppComponent} from './app.component';
 import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './login/register.component';
-
+import {PagesComponent} from "src/app/pages/pages.component";
 
 //Modulo de servicios
 import {ServiceModule} from "src/app/services/service.module";
+import {SharedModule} from "src/app/shared/shared.module";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
   ],
   imports: [/*Modulos*/
     BrowserModule,
-    PagesModule,
+/*    PagesModule,*/
     FormsModule,
     ReactiveFormsModule,
     APP_ROUTES,
-    ServiceModule
+    ServiceModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,7 @@ import {NopagefoundComponent} from "src/app/shared/nopagefound/nopagefound.compo
 import {BreadcrumbsComponent} from "src/app/shared/breadcrumbs/breadcrumbs.component";
 import {SidebarComponent} from "src/app/shared/sidebar/sidebar.component";
 import {PipesModule} from "src/app/pipes/pipes.module";
+import {ModalUploadComponent} from "src/app/components/modal-upload/modal-upload.component";
 
 
 @NgModule({
@@ -21,13 +22,15 @@ import {PipesModule} from "src/app/pipes/pipes.module";
    NopagefoundComponent,
    HeaderComponent,
    SidebarComponent,
-   BreadcrumbsComponent
+   BreadcrumbsComponent,
+   ModalUploadComponent
  ],
  declarations: [
    NopagefoundComponent,
    HeaderComponent,
    SidebarComponent,
-   BreadcrumbsComponent
+   BreadcrumbsComponent,
+   ModalUploadComponent
  ],
  providers: [],
 })

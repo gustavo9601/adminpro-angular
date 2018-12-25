@@ -27,6 +27,27 @@ export class UsuarioService {
 
   }
 
+
+  renuevaToken() {
+    let url = URL_SERVICIOS + '/login/renuevatoken?token=' + this.token;
+
+    return this.http.get(url).pipe(
+      map((respuesta: any) => {
+
+        //Sobrescribiendo el token
+        this.token = respuesta.token;
+
+        //Seteamis de nuevo en el local storage el token
+        localStorage.setItem('token', respuesta.token);
+
+        return respuesta;
+
+      })
+    )
+
+  }
+
+
   /*=====================================================================================*/
   /*GOOGLE NO FUNCIONAL*/
 

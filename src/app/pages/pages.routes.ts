@@ -14,9 +14,40 @@ import {MedicosComponent} from "src/app/pages/medicos/medicos.component";
 import {MedicoComponent} from "src/app/pages/medicos/medico.component";
 import {BusquedaComponent} from "src/app/pages/busqueda/busqueda.component";
 import {AdminGuard} from "src/app/services/guards/admin.guard";
+import {VerificaTokenGuard} from "src/app/services/guards/verifica-token.guard";
 
 
 const appRoutes: Routes = [
+  //data : {} | ''   => envia informacion de la ruta, que puede ser recibida desde el componente
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    data: {titulo: 'Dahsboard'},
+    canActivate: [VerificaTokenGuard]
+    },
+  {path: 'progress', component: ProgressComponent, data: {titulo: 'Progress @Input @Output @Viewchild'}},
+  {path: 'graficas1', component: Graficas1Component, data: {titulo: 'Graficas @Input'}},
+  {path: 'promesas', component: PromesasComponent, data: {titulo: 'Promesas'}},
+  {path: 'account-settings', component: AccountSettingsComponent, data: {titulo: 'Settings'}},
+  {path: 'rxjs', component: RxjsComponent, data: {titulo: 'RxJs Observables'}},
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+  {path: 'perfil', component: PerfilComponent, data: {titulo: 'Perfil'}},
+  {path: 'busqueda/:termino', component: BusquedaComponent, data: {titulo: 'Buscador'}},
+  //Mantenimientos
+  //Esta ruta pasa por el otro AdminGuard
+  {
+    canActivate: [AdminGuard],  //verificara que el role sea valido
+    path: 'usuarios',
+    component: UsuariosComponent,
+    data: {titulo: 'Mantenimientos usuarios'}
+  },
+  {path: 'hospitales', component: HospitalesComponent, data: {titulo: 'Mantenimientos hospitales'}},
+  {path: 'medicos', component: MedicosComponent, data: {titulo: 'Mantenimientos Medicos'}},
+  {path: 'medico/:id', component: MedicoComponent, data: {titulo: 'Actualizar Medico'}}
+
+];
+
+/*const appRoutes: Routes = [
   {
     path: '',
     component: PagesComponent,
@@ -45,7 +76,7 @@ const appRoutes: Routes = [
       {path: 'medico/:id', component: MedicoComponent, data: {titulo: 'Actualizar Medico'}}
     ]
   }
-];
+];*/
 
 
 /*

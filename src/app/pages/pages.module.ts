@@ -36,7 +36,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     PipesModule,
     CommonModule]/*Modulos*/,
   exports: [/*Componentes accesados desde otros modulos*/
-    PagesComponent,
+    /*PagesComponent,*/
     DashboardComponent,
     ProgressComponent,
     GraficoDonaComponent,
@@ -45,7 +45,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     UsuariosComponent
   ],
   declarations: [/*Componentes localmente*/
-    PagesComponent,
+    /*PagesComponent,*/
     DashboardComponent,
     ProgressComponent,
     GraficoDonaComponent,
@@ -56,7 +56,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     RxjsComponent,
     PerfilComponent,
     UsuariosComponent,
-    ModalUploadComponent,
+  /*  ModalUploadComponent,*/
     HospitalesComponent,
     MedicoComponent,
     MedicosComponent,

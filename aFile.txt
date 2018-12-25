@@ -1,0 +1,22 @@
+Hash: [1mfa5f8ca6d76a5e5c2b94[39m[22m
+Version: webpack [1m4.9.2[39m[22m
+Time: [1m9437[39m[22mms
+Built at: 2018-12-24 [1m18:54:45[39m[22m
+                            [1mAsset[39m[22m       [1mSize[39m[22m  [1mChunks[39m[22m  [1m[39m[22m[1m[39m[22m[1mChunk Names[39m[22m
+  [1m[32mruntime.a66f828dca56eeb90e02.js[39m[22m   1.03 KiB       [1m0[39m[22m  [1m[32m[39m[22mruntime
+  [1m[32mstyles.4792c9f3b57e68dab61b.css[39m[22m  206 bytes       [1m1[39m[22m  [1m[32m[39m[22mstyles
+[1m[32mpolyfills.e7f5364b276024e19b0b.js[39m[22m  130 bytes       [1m2[39m[22m  [1m[32m[39m[22mpolyfills
+     [1m[32mmain.0594610c91de797f492a.js[39m[22m  128 bytes       [1m3[39m[22m  [1m[32m[39m[22mmain
+Entrypoint [1mmain[39m[22m = [1m[32mruntime.a66f828dca56eeb90e02.js[39m[22m [1m[32mmain.0594610c91de797f492a.js[39m[22m
+Entrypoint [1mpolyfills[39m[22m = [1m[32mruntime.a66f828dca56eeb90e02.js[39m[22m [1m[32mpolyfills.e7f5364b276024e19b0b.js[39m[22m
+Entrypoint [1mstyles[39m[22m = [1m[32mruntime.a66f828dca56eeb90e02.js[39m[22m [1m[32mstyles.4792c9f3b57e68dab61b.css[39m[22m
+chunk    {[1m[33m0[39m[22m} [1m[32mruntime.a66f828dca56eeb90e02.js[39m[22m (runtime) 0 bytes ={[1m[33m1[39m[22m}= ={[1m[33m2[39m[22m}= ={[1m[33m3[39m[22m}=[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m
+chunk    {[1m[33m1[39m[22m} [1m[32mstyles.4792c9f3b57e68dab61b.css[39m[22m (styles) 359 bytes ={[1m[33m0[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m
+chunk    {[1m[33m2[39m[22m} [1m[32mpolyfills.e7f5364b276024e19b0b.js[39m[22m (polyfills) 28 bytes ={[1m[33m0[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m
+chunk    {[1m[33m3[39m[22m} [1m[32mmain.0594610c91de797f492a.js[39m[22m (main) 28 bytes ={[1m[33m0[39m[22m}=[1m[33m [initial][39m[22m[1m[32m [rendered][39m[22m
+
+[1m[31mERROR in : Couldn't resolve resource /login.component.css relative to C:/xampp/htdocs/angular/4 - Apps/adminpro/src/app/login/register.component.ts
+[39m[22m
+Child [1mmini-css-extract-plugin ../../4 - Apps\adminpro\node_modules\@angular-devkit\build-angular\src\angular-cli-files\plugins\raw-css-loader.js!../../4 - Apps\adminpro\node_modules\postcss-loader\lib\index.js??extracted!../../4 - Apps\adminpro\src\styles.css[39m[22m:
+    Entrypoint [1mmini-css-extract-plugin[39m[22m = [1m[32m*[39m[22m
+    chunk    {[1m[33m0[39m[22m} [1m[32m*[39m[22m (mini-css-extract-plugin) 363 bytes[1m[33m [entry][39m[22m[1m[32m [rendered][39m[22m

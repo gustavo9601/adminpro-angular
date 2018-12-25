@@ -3,6 +3,8 @@
 * */
 
 
+export {VerificaTokenGuard} from "src/app/services/guards/verifica-token.guard";
+
 export {AdminGuard} from "src/app/services/guards/admin.guard";
 export {MedicoService} from "src/app/services/medicos/medico.service";
 export {HospitalService} from "src/app/services/hospital/hospital.service";
